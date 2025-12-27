@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Image.network(
-          'https://www.shutterstock.com/image-photo/rajasthan-jaipur-india-15-apple-600nw-2195929265.jpg',
+          'https://www.shutterstock.com/image-photo/rajasthan-jaipur-india-15-apple-600nw-2195929265.jpg', //check to test if image is showing
           height: double.infinity,
           fit: BoxFit.contain,
           loadingBuilder: (context, child, loadingProgress) {
