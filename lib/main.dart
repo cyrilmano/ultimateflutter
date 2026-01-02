@@ -56,65 +56,34 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    debugPrint("MyHomePage build called. Counter: $_counter");
     return Scaffold(
+      backgroundColor: Colors.black, // Explicit background
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        backgroundColor: Colors.green, // Solid color for testing
+        title: Text(widget.title, style: const TextStyle(color: Colors.white)),
       ),
-      body: Center(
-        child: Image.network(
-          'https://i.pinimg.com/736x/77/13/56/771356b7c24e4c3c4937d429c097154e.jpg', //check to test if image is showing
-          height: double.infinity,
-          fit: BoxFit.cover,
-          loadingBuilder: (context, child, loadingProgress) {
-            if (loadingProgress == null) return child;
-            return Center(
-              child: CircularProgressIndicator(
-                value: loadingProgress.expectedTotalBytes != null
-                    ? loadingProgress.cumulativeBytesLoaded /
-                          loadingProgress.expectedTotalBytes!
-                    : null,
+      body: Container(
+        padding: EdgeInsets.all(50.0),
+        child: Stack(
+          children: [
+            Image.asset(
+              'assets/images/ultimateflutterbg.jpg',
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
+            SizedBox(
+              height: 100,
+              width: 100,
+              child: Center(
+                child: Text(
+                  'Flutter',
+                  style: TextStyle(color: Colors.black, fontSize: 24),
+                ),
               ),
-            );
-          },
-          errorBuilder: (context, error, stackTrace) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(Icons.error, color: Colors.red, size: 64),
-                const SizedBox(height: 16),
-                const Text(
-                  'Failed to load image',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 8),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 32),
-                  child: Text(
-                    'Error: $error',
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: Colors.grey),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                const Text(
-                  'Note: On Web, this might be a CORS issue.',
-                  style: TextStyle(fontStyle: FontStyle.italic),
-                ),
-              ],
-            );
-          },
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
