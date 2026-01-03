@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title, style: const TextStyle(color: Colors.white)),
       ),
       body: Container(
-        padding: EdgeInsets.all(50.0),
+        //padding: EdgeInsets.all(50.0),
         child: Stack(
           children: [
             Image.asset(
@@ -74,8 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
               fit: BoxFit.cover,
             ),
             SizedBox(
-              height: 100,
-              width: 100,
+              //height: 100,
+              //width: 100,
               child: Center(
                 child: Text(
                   'Flutter',
