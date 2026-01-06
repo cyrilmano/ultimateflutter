@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //width: 100,
               child: Center(
                 child: Text(
-                  'Flutter Project',
+                  'Flutter Project Again',
                   style: TextStyle(color: Colors.black, fontSize: 24),
                 ),
               ),
