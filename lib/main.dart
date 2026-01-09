@@ -24,6 +24,32 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Cyril Map')
         ),
+        drawer: SafeArea(
+          child: Drawer(
+            child: Column(
+              children: [
+                DrawerHeader(child: 
+                  Text('Menu')
+                ),
+                ListTile(
+                  title: Text('Logout')
+                ),
+              ],
+            )
+          ),
+        ),
+        floatingActionButton: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(
+              onPressed: () {
+                print('heeeor');
+              },
+              child: Icon(Icons.add)
+            
+            ),
+          ],
+        ),
         bottomNavigationBar: NavigationBar(destinations: [
           NavigationDestination(
             icon: Icon(Icons.home), 
@@ -35,7 +61,7 @@ class MyApp extends StatelessWidget {
           print(value);
           selectedIndex: value;
         },
-        selectedIndex: 0,
+        //selectedIndex: 1,
         
         
         
