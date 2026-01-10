@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
                   Text('Menu')
                 ),
                 ListTile(
-                  title: Text('Logout')
+                  title: Text('Logout') //what's the logout here for at the moment
                 ),
               ],
             )
